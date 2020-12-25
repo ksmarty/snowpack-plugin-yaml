@@ -1,0 +1,10 @@
+{
+  "include": ["src", "tests"],
+  "types": [
+    "node"
+  ],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "types"
+  }
+}
