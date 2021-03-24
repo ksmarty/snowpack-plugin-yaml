@@ -1,23 +1,23 @@
-import { dataToEsm } from '@rollup/pluginutils';
-import { parse } from '@iarna/toml';
-import { promises } from 'fs';
+import { dataToEsm } from "@rollup/pluginutils";
+import * as YAML from "js-yaml";
+import { promises } from "fs";
 
 export default () => {
   return {
-    name: 'snowpack-plugin-toml',
+    name: "snowpack-plugin-yaml",
     resolve: {
-      input: ['.toml'],
-      output: ['.js']
+      input: [".yaml"],
+      output: [".js"],
     },
-    async load({filePath}) {
-      let toml = parse(await promises.readFile(filePath, 'utf-8'));
+    async load({ filePath }) {
+      const yaml = YAML.load(await promises.readFile(filePath, "utf-8"));
 
       return {
-        '.js': {
-          code: dataToEsm(toml),
-          map: { mappings: '' }
-        }
-      }
-    }
-  }
-}
+        ".js": {
+          code: dataToEsm(yaml),
+          map: { mappings: "" },
+        },
+      };
+    },
+  };
+};
