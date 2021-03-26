@@ -1,6 +1,6 @@
 {
   "name": "snowpack-plugin-yaml",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "A Snowpack plugin to convert YAML files to ESM.",
   "main": "dist/plugin.js",
   "module": "dist/plugin.mjs",

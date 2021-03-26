@@ -20,5 +20,5 @@ export default {
     typescript(),
     terser(),
   ],
-  external: [ 'fs', '@iarna/toml', '@rollup/pluginutils' ]
+  external: [ 'fs', 'js-yaml', '@rollup/pluginutils' ]
 }
